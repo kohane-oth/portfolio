@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音羽 翔 | Motion & Rigging Artist Portfolio</title>
+    <title>音羽 翔 | Motion Designer Portfolio</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,6 +24,8 @@
                         gold: {
                             500: '#C5A059',
                             600: '#B08D46',
+                            50: '#FDFBF7',
+                            200: '#E8D5B5'
                         },
                         light: {
                             100: '#F0F0F0',
@@ -78,21 +80,17 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        .servant-badge {
+            transition: all 0.2s ease;
+        }
+        .servant-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
     </style>
 </head>
 <body class="antialiased">
-
-    <!-- Chosen Palette: Light Off-White background (#F0F0F0) to meet the light background requirement. Deep Navy (#0D1B2A) for primary text and structural contrast, Rich Gold (#C5A059) for highlights and calls to action. -->
-    
-    <!-- Application Structure Plan: Designed as a single-page interactive portfolio dashboard. The structure begins with an impactful Hero/Summary section (Profile & Core Value) to immediately hook the recruiter. It then transitions into a Skill Set analysis using a Radar Chart. The core "Case Studies" (Projects) use a tabbed interface to allow deep exploration without overwhelming vertical scroll. Finally, the "Technical Expertise" section uses interactive data visualization to quantify the business impact (time saved) of tool development, proving both artistic and engineering capabilities before concluding with contact info. -->
-    
-    <!-- Visualization & Content Choices: 
-    - Skill Set -> Goal: Inform -> Radar Chart (Chart.js) -> Hover interaction for specific scores -> Visually proves the hybrid nature of the candidate (Art + Tech + Management) without heavy text.
-    - Project Showcase -> Goal: Organize -> Tabbed Panels (Vanilla JS) -> Click to switch projects -> Keeps layout compact while displaying rich qualitative data (achievements, leadership, user feedback).
-    - Tool Impact -> Goal: Compare -> Bar Chart (Chart.js) -> Interactive Toggle (Manual vs. Tool) -> Quantifies technical achievements. Proves that scripting skills lead to actual business value (hours saved). 
-    -->
-    
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <nav class="fixed w-full bg-white/95 backdrop-blur shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4">
@@ -100,6 +98,7 @@
                 <span class="font-serif text-xl font-bold text-navy-900 tracking-widest">OTOHA SHO</span>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">PROFILE</a>
+                    <a href="#record" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">TRACK RECORD</a>
                     <a href="#skills" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">SKILLS</a>
                     <a href="#projects" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">PROJECTS</a>
                     <a href="#tech" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">TECHNICAL</a>
@@ -112,52 +111,119 @@
         <div class="max-w-6xl mx-auto">
             <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 border-t-4 border-gold-500">
                 <div class="w-full md:w-2/3 space-y-6">
-                    <p class="text-gold-500 font-bold tracking-widest uppercase text-sm">Motion & Rigging Artist</p>
+                    <p class="text-gold-500 font-bold tracking-widest uppercase text-sm">Motion Designer</p>
                     <h1 class="text-4xl md:text-5xl font-serif font-bold text-navy-900 leading-tight">
                         音羽 翔 <span class="text-2xl text-gray-400 font-sans font-normal ml-2">OTOHA SHO</span>
                     </h1>
-                    <h2 class="text-xl text-navy-700 font-medium">F/GO Character Motion & Technical Support</h2>
+                    <h2 class="text-xl text-navy-700 font-medium">F/GO Character Motion & Technical Solutions</h2>
                     <p class="text-gray-700 leading-relaxed text-lg bg-light-100 p-6 rounded-lg border-l-4 border-navy-900">
                         モーション表現の追求から、リグ構築、スクリプト開発によるワークフロー改善まで一貫して担うハイブリッドな制作スタイルが強みです。アーティストとしての表現力とエンジニアリングの技術力の両輪で、プロジェクトの課題を解決へと導きます。
                     </p>
                 </div>
                 <div class="w-full md:w-1/3 flex justify-center">
                     <div class="w-64 h-64 bg-light-200 rounded-full border-4 border-white shadow-xl flex items-center justify-center overflow-hidden relative">
-                        <span class="text-6xl absolute z-0 opacity-20">👤</span>
-                        <div class="z-10 text-center w-full h-full flex flex-col items-center justify-center bg-navy-900/5 text-navy-900">
-                            <span class="text-sm font-bold">Profile Photo Area</span>
-                            <span class="text-xs text-gray-500 mt-1">(3461s.jpg)</span>
-                        </div>
+                        <img src="pic/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover z-10">
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="skills" class="py-16 px-4 bg-white/50">
+    <section id="record" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-serif font-bold text-navy-900">Participated Servants</h2>
+                <p class="mt-4 text-gray-600">project F/GO 制作実績 (2020〜2026)</p>
+            </div>
+            
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm">
+                <!-- 2026 -->
+                <div class="mb-8 flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                    <div class="w-full md:w-32 font-bold text-navy-900 md:border-r-2 border-gold-500 md:pr-4 md:text-right text-xl">2026年</div>
+                    <div class="flex-1 flex flex-wrap gap-3">
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">デメテル</span>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="mb-8 flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                    <div class="w-full md:w-32 font-bold text-navy-900 md:border-r-2 border-gray-200 md:pr-4 md:text-right text-xl text-gray-500">2025年</div>
+                    <div class="flex-1 flex flex-wrap gap-3">
+                        <a href="#projects" onclick="switchTab('shiki')" class="servant-badge px-4 py-2 bg-gold-50 border border-gold-500 rounded-full text-sm text-navy-900 font-bold shadow-sm flex items-center gap-1 cursor-pointer">
+                            <span class="text-gold-600">&#9733;</span> 水着両儀式 <span class="text-xs font-normal text-gray-500 ml-1">(Pickup)</span>
+                        </a>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">土方歳三</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着呼延灼</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">メタトロンジャンヌ</span>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="mb-8 flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                    <div class="w-full md:w-32 font-bold text-navy-900 md:border-r-2 border-gray-200 md:pr-4 md:text-right text-xl text-gray-500">2024年</div>
+                    <div class="flex-1 flex flex-wrap gap-3">
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ツタンカーメン</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着テノチティトラン</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">BBドバイ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ひびちか</span>
+                    </div>
+                </div>
+
+                <!-- 2020-2023 -->
+                <div class="flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                    <div class="w-full md:w-32 font-bold text-navy-900 md:border-r-2 border-gray-200 md:pr-4 md:text-right text-base text-gray-500 pt-1">2020<br>|<br>2023</div>
+                    <div class="flex-1 flex flex-wrap gap-3">
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">上杉謙信</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着メリュジーヌ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着キャストリア</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ドゥルガー</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">セタンタ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ブリトマート</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">九紋竜エリザ</span>
+                        <a href="#projects" onclick="switchTab('iyo')" class="servant-badge px-4 py-2 bg-gold-50 border border-gold-500 rounded-full text-sm text-navy-900 font-bold shadow-sm flex items-center gap-1 cursor-pointer">
+                            <span class="text-gold-600">&#9733;</span> 壱与 <span class="text-xs font-normal text-gray-500 ml-1">(Pickup)</span>
+                        </a>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着スカディ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着伊吹童子</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">クリームヒルト</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">スーパーバニヤン</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">徴姉妹</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ジャックドモレー</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着カーマ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">オベロン</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">アイドルオルタ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">カレン</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">平景清</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">卑弥呼</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着紫式部</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着アビゲイル</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">水着イリヤ</span>
+                        <span class="servant-badge px-4 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm text-navy-800 font-medium">ボイジャー</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 px-4 bg-white/50 border-t border-gray-200">
         <div class="max-w-6xl mx-auto">
             <div class="mb-12 text-center">
                 <h2 class="text-3xl font-serif font-bold text-navy-900">Core Competencies</h2>
                 <p class="mt-4 text-gray-600">ハイブリッドなスキルセットによる課題解決能力</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-2xl shadow-sm">
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xl font-bold text-navy-900 flex items-center gap-2"><span class="text-gold-500 text-2xl">&#9632;</span> Motion / Rigging (Maya)</h3>
-                        <p class="text-gray-600 mt-2 ml-7">繊細なデザイン意図を汲み取った高品質なモーション制作と、アニメーターが使いやすい堅牢なリグ構築。ディレクターから一発OKを引き出すクオリティコントロール。</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-navy-900 flex items-center gap-2"><span class="text-gold-500 text-2xl">&#9632;</span> Scripting (MEL / AI Util)</h3>
-                        <p class="text-gray-600 mt-2 ml-7">Maya MELを用いた自動化ツールの開発。Gemini等のAIを積極的に活用し、未経験領域の言語仕様も迅速にキャッチアップして要件定義から最速で実装する能力。</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-navy-900 flex items-center gap-2"><span class="text-gold-500 text-2xl">&#9632;</span> Team Management</h3>
-                        <p class="text-gray-600 mt-2 ml-7">後進の育成、技術的サポート、メンタリング。困難なフィードバックに対する具体的な解決策の提示を通じたチーム全体の納品クオリティの担保。</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Motion / Rigging (Maya)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">繊細なデザイン意図を汲み取った高品質なモーション制作と、アニメーターが使いやすい堅牢なリグ構築。ディレクターから一発OKを引き出すクオリティコントロール。</p>
                 </div>
-                <div class="chart-container">
-                    <canvas id="skillsRadar"></canvas>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Scripting / AI Util</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Maya MELを用いた自動化ツールの開発。Gemini等のAIを積極的に活用し、未経験領域の言語仕様も迅速にキャッチアップして要件定義から最速で実装する能力。</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Team Management</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">後進の育成、技術的サポート、メンタリング。困難なフィードバックに対する具体的な解決策の提示を通じたチーム全体の納品クオリティの担保。</p>
                 </div>
             </div>
         </div>
@@ -167,7 +233,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="mb-10 text-center">
                 <h2 class="text-3xl font-serif font-bold text-navy-900">Project Highlights</h2>
-                <p class="mt-4 text-gray-600">F/GOにおける制作実績とチームへの貢献</p>
+                <p class="mt-4 text-gray-600">ピックアップ実績とチームへの貢献</p>
             </div>
 
             <div class="flex justify-center mb-8 border-b-2 border-gray-200">
@@ -177,33 +243,31 @@
 
             <div id="content-shiki" class="fade-in bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
                 <div class="grid grid-cols-1 lg:grid-cols-5">
-                    <div class="lg:col-span-2 bg-navy-900 p-8 flex flex-col justify-center text-center border-b lg:border-b-0 lg:border-r border-navy-800">
-                        <div class="w-full aspect-[3/4] bg-navy-800 rounded-xl mb-6 flex flex-col items-center justify-center border border-gray-700 p-4">
-                            <span class="text-6xl mb-4 opacity-50">🗡️</span>
-                            <span class="text-white font-bold text-sm">Official Final Ascension Image</span>
-                            <span class="text-gray-400 text-xs mt-2 text-center">(Strict NDA adherence. Showing public concept only.)</span>
+                    <div class="lg:col-span-2 bg-navy-900 p-8 flex flex-col justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-navy-800">
+                        <div class="bg-navy-800 rounded-xl mb-6 overflow-hidden border border-gray-700 shadow-lg max-w-full" style="width: 300px; height: 512px;">
+                            <img src="pic/nekousagi.jpg" alt="Official Final Ascension Image" class="w-full h-full object-cover">
                         </div>
-                        <a href="https://www.youtube.com/watch?v=REHZKaGsf6Q" target="_blank" class="inline-block bg-gold-500 text-navy-900 font-bold py-3 px-6 rounded hover:bg-gold-600 transition shadow-lg">
+                        <a href="https://www.youtube.com/watch?v=REHZKaGsf6Q" target="_blank" class="inline-block bg-gold-500 text-navy-900 font-bold py-3 px-6 rounded hover:bg-gold-600 transition shadow-lg w-full max-w-[300px]">
                             &#9654; View Motion Showcase
                         </a>
                     </div>
                     
                     <div class="lg:col-span-3 p-8 md:p-12">
-                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">Lead Rigging & Motion</div>
-                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">水着両儀式 (FGO)</h3>
+                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">霊基3のリギング・モーション制作 / クオリティサポート</div>
+                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">水着両儀式 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2025年)</span></h3>
                         
                         <div class="space-y-8">
                             <div>
-                                <h4 class="text-xl font-bold text-gold-600 border-b border-gray-200 pb-2 mb-3">成果・クオリティへのコミット (霊基3)</h4>
+                                <h4 class="text-xl font-bold text-gold-600 border-b border-gray-200 pb-2 mb-3">高い品質の実現</h4>
                                 <p class="text-gray-700 leading-relaxed">
                                     原作の繊細なデザイン意図を深く理解し、モデルとモーションへ精密に落とし込みました。極めて高いクオリティラインが要求される中、<strong class="text-navy-900 bg-gold-500/20 px-1">初回の提出でディレクターの承認を獲得</strong>。リテイク工数をゼロに抑えることで、スケジュールの短縮とプロジェクト全体の品質向上に大きく貢献しました。
                                 </p>
                             </div>
                             
                             <div>
-                                <h4 class="text-xl font-bold text-gold-600 border-b border-gray-200 pb-2 mb-3">後進育成と品質管理 (霊基1・2)</h4>
+                                <h4 class="text-xl font-bold text-gold-600 border-b border-gray-200 pb-2 mb-3">後進育成</h4>
                                 <p class="text-gray-700 leading-relaxed">
-                                    他メンバーが担当したリグおよびモーション制作において、技術的サポートとメンタリングを実施。特に難易度の高い霊基2の「着物のウェイト・制御」に関する高度なフィードバックに対し、<strong class="text-navy-900">的確な技術的解決策を自ら提示</strong>して直接サポートしました。個人の制作だけでなく、チームのボトムアップにも貢献しています。
+                                    他メンバーが担当した霊基1・2のリグおよびモーション制作において、技術的サポートとメンタリングを実施しました。特に難易度の高い霊基2の「着物のウェイト・制御」に関する高度なフィードバックに対し、<strong class="text-navy-900">的確な技術的解決策を自ら提示</strong>して直接サポートしました。個人の制作だけでなく、チームのボトムアップにも貢献しています。
                                 </p>
                             </div>
                         </div>
@@ -213,36 +277,28 @@
 
             <div id="content-iyo" class="hidden fade-in bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
                 <div class="grid grid-cols-1 lg:grid-cols-5">
-                    <div class="lg:col-span-2 bg-navy-900 p-8 flex flex-col justify-center text-center border-b lg:border-b-0 lg:border-r border-navy-800">
-                        <div class="w-full aspect-[3/4] bg-navy-800 rounded-xl mb-6 flex flex-col items-center justify-center border border-gray-700 p-4">
-                            <span class="text-6xl mb-4 opacity-50">✨</span>
-                            <span class="text-white font-bold text-sm">Official Concept Image</span>
-                            <span class="text-gray-400 text-xs mt-2 text-center">(Strict NDA adherence. Showing public concept only.)</span>
+                    <div class="lg:col-span-2 bg-navy-900 p-8 flex flex-col justify-center items-center text-center border-b lg:border-b-0 lg:border-r border-navy-800">
+                        <div class="bg-navy-800 rounded-xl mb-6 overflow-hidden border border-gray-700 shadow-lg max-w-full" style="width: 300px; height: 512px;">
+                            <img src="pic/iyo.png" alt="Official Concept Image" class="w-full h-full object-cover">
                         </div>
-                        <a href="https://www.youtube.com/watch?v=y7xgiL9JJkg" target="_blank" class="inline-block bg-gold-500 text-navy-900 font-bold py-3 px-6 rounded hover:bg-gold-600 transition shadow-lg">
+                        <a href="https://www.youtube.com/watch?v=y7xgiL9JJkg" target="_blank" class="inline-block bg-gold-500 text-navy-900 font-bold py-3 px-6 rounded hover:bg-gold-600 transition shadow-lg w-full max-w-[300px]">
                             &#9654; View Motion Showcase
                         </a>
                     </div>
                     
                     <div class="lg:col-span-3 p-8 md:p-12">
-                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">Rigging & Motion</div>
-                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">壱与 (FGO)</h3>
+                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">モーション</div>
+                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">壱与 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2022年)</span></h3>
                         
                         <div class="space-y-6">
                             <div>
-                                <h4 class="text-lg font-bold text-navy-900 mb-2">課題とアプローチ</h4>
+                                <h4 class="text-lg font-bold text-navy-900 mb-2">課題に対するアプローチと工夫</h4>
                                 <p class="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg">
-                                    アクロバットなモーションが多く要求されるキャラクターデザインに対し、破綻のない滑らかな動きを実現するためのリグ構築とアニメーション制作を担当しました。
+                                    アクロバットなモーションが多く要求されるキャラクターデザインに対し、破綻のない滑らかな動きを実現するアニメーション制作を担当しました。説得力のある回転表現や体重移動を再現するため、<strong class="text-navy-900 border-b border-gold-500">オリンピックの体操競技の動画を徹底的にリファレンスとして分析</strong>し、ダイナミックでありながらキャラクターの個性を損なわないモーションへと落とし込みました。
                                 </p>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-navy-900 mb-2">工夫点</h4>
-                                <p class="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg">
-                                    説得力のある回転表現や体重移動を再現するため、<strong class="text-navy-900 border-b border-gold-500">オリンピックの体操競技の動画を徹底的にリファレンスとして分析</strong>。ダイナミックでありながらキャラクターの個性を損なわないモーションに落とし込みました。
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-navy-900 mb-2 flex items-center gap-2"><span class="text-gold-500">&#9733;</span> ユーザー反響・成果</h4>
+                                <h4 class="text-lg font-bold text-navy-900 mb-2 flex items-center gap-2"><span class="text-gold-500">&#9733;</span> ユーザー反響</h4>
                                 <p class="text-gray-700 leading-relaxed bg-gold-500/10 p-4 rounded-lg border border-gold-500/20">
                                     イベント配布キャラクターとして多くのプレイヤーが実際に操作し目にする機会が多い中、実装後には<strong class="text-navy-900">プレイヤーからモーションに関する多数のポジティブなフィードバックを獲得</strong>。ユーザーのゲーム体験価値向上に直接貢献しました。
                                 </p>
@@ -258,38 +314,51 @@
     <section id="tech" class="py-20 px-4 bg-navy-900 text-white">
         <div class="max-w-6xl mx-auto">
             <div class="mb-12 text-center">
-                <h2 class="text-3xl font-serif font-bold text-white">Technical Problem Solving</h2>
+                <h2 class="text-3xl font-serif font-bold text-white">Technical Problem Solving & Tool Development</h2>
                 <p class="mt-4 text-gray-400">エンジニアリング視点によるワークフロー改善とツール開発</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-8">
+                    <!-- Tool 1: Scale Joint Fixer -->
                     <div class="bg-navy-800 p-8 rounded-2xl border border-navy-700 shadow-xl">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-xl font-bold text-gold-500">Unity用FBX ジョイントスケール自動修正</h3>
-                            <span class="text-xs bg-navy-700 px-2 py-1 rounded text-gray-300 font-mono">Maya MEL</span>
+                            <span class="text-xs bg-navy-700 px-3 py-1 rounded text-gray-300 font-mono border border-navy-600">Maya MEL / 2024年開発</span>
                         </div>
+                        
+                        <div class="w-full h-56 bg-navy-900 rounded-lg mb-6 overflow-hidden border border-gray-600 flex items-center justify-center p-2">
+                            <img src="pic/sbox.png" alt="Scale Joint Fixer Demo" class="w-full h-full object-contain">
+                        </div>
+
                         <ul class="space-y-4 text-gray-300 text-sm">
-                            <li><strong class="text-white block mb-1">Issue:</strong> Unity上で致命的なシステムエラーを引き起こす微小なジョイントスケール値(0.001以下)に対し、Graph Editorでの目視確認と手作業修正が常態化。工数圧迫とヒューマンエラーのリスクが課題。</li>
-                            <li><strong class="text-white block mb-1">Solution:</strong> 全タイムライン・全ジョイントを走査し、対象値以下を自動で0.001に補正するスクリプトを開発。</li>
-                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 未経験からライブラリを調査し約3ヶ月で実装。手作業の修正を<span class="font-bold text-white">「1ボタン」</span>に短縮。</li>
+                            <li><strong class="text-white block mb-1">Issue:</strong> Unity上で致命的なシステムエラーを引き起こす微小なジョイントスケール値に対し、Graph Editorでの目視確認と手作業による修正が常態化。多大な工数圧迫とヒューマンエラーのリスクが課題でした。</li>
+                            <li><strong class="text-white block mb-1">Solution:</strong> 全タイムライン・全ジョイントを対象とし、対象値以下を自動で0.001に補正するスクリプトを開発。</li>
+                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 毎度発生していた修正の手間を<span class="font-bold text-white">「1ボタン」</span>に短縮。（開発期間：約3ヶ月。未経験からライブラリを調査し実装）</li>
                         </ul>
                     </div>
 
+                    <!-- Tool 2: Vertex Delete Tool -->
                     <div class="bg-navy-800 p-8 rounded-2xl border border-navy-700 shadow-xl">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-xl font-bold text-gold-500">不要Vertex自動削除ツール</h3>
-                            <span class="text-xs bg-navy-700 px-2 py-1 rounded text-gray-300 font-mono">AI Util / Script</span>
+                            <span class="text-xs bg-navy-700 px-3 py-1 rounded text-gray-300 font-mono border border-navy-600">AI Util / 2026年開発</span>
                         </div>
+                        
+                        <div class="w-full h-56 bg-navy-900 rounded-lg mb-6 overflow-hidden border border-gray-600 flex items-center justify-center p-2">
+                            <img src="pic/mosaic.png" alt="Vertex Delete Tool Demo" class="w-full h-full object-contain">
+                        </div>
+
                         <ul class="space-y-4 text-gray-300 text-sm">
-                            <li><strong class="text-white block mb-1">Issue:</strong> マテリアル受け取り後のセットアップ時における、エッジ上の不要な頂点を探して削除する手間の発生。</li>
-                            <li><strong class="text-white block mb-1">Solution:</strong> 全ポリゴンを対象に、頂点両側のエッジ挟角(0.01度以上)から直線上の不要な頂点のみを判定し自動削除するツール。</li>
+                            <li><strong class="text-white block mb-1">Issue:</strong> マテリアル受け取り後のセットアップ時における、エッジ上の不要な頂点削除の手間。</li>
+                            <li><strong class="text-white block mb-1">Solution:</strong> 全ポリゴンを対象に、頂点両側のエッジ挟角から直線上の不要な頂点のみを判定し自動削除するツールを開発。</li>
                             <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 最新技術(Gemini)を積極的に活用し、要件定義から<span class="font-bold text-white">わずか0.5日</span>で実装完了。</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl flex flex-col justify-center">
+                <!-- Interactive Data Visualization -->
+                <div class="bg-white p-8 rounded-2xl flex flex-col justify-center sticky top-24 h-fit">
                     <div class="text-center mb-6">
                         <h3 class="text-2xl font-bold text-navy-900">ワークフロー改善効果 (推定)</h3>
                         <p class="text-gray-500 text-sm mt-2">1アセットあたりの作業工数の削減インパクト</p>
@@ -323,7 +392,7 @@
                 <a href="mailto:lite_kohane@outlook.com" class="text-2xl font-bold text-white border-b-2 border-gold-500 pb-1 hover:text-gold-500 transition-colors">
                     lite_kohane@outlook.com
                 </a>
-                <p class="text-gray-500 text-sm mt-12">&copy; 2026 Otoha Sho. Portfolio.</p>
+                <p class="text-gray-500 text-sm mt-12">&copy; 2026 Otoha Sho.</p>
             </div>
         </div>
     </footer>
@@ -339,55 +408,6 @@
             document.getElementById('content-' + tabId).classList.remove('hidden');
             document.getElementById('tab-' + tabId).classList.add('active', 'text-navy-900');
         }
-
-        const ctxRadar = document.getElementById('skillsRadar').getContext('2d');
-        const radarChart = new Chart(ctxRadar, {
-            type: 'radar',
-            data: {
-                labels: ['Motion Animation', 'Rigging / Setup', 'MEL Scripting', 'AI Utilization', 'Team Mentoring'],
-                datasets: [{
-                    label: 'Skill Proficiency',
-                    data: [95, 90, 80, 85, 80],
-                    backgroundColor: 'rgba(197, 160, 89, 0.25)', 
-                    borderColor: '#C5A059',
-                    borderWidth: 2,
-                    pointBackgroundColor: '#0D1B2A',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#0D1B2A',
-                    pointRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0,0,0,0.1)' },
-                        grid: { color: 'rgba(0,0,0,0.1)' },
-                        pointLabels: {
-                            font: { family: "'Noto Sans JP', sans-serif", size: 12, weight: 'bold' },
-                            color: '#0D1B2A'
-                        },
-                        ticks: { display: false, min: 0, max: 100 }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#0D1B2A',
-                        padding: 12,
-                        titleFont: { family: "'Noto Sans JP', sans-serif", size: 14 },
-                        bodyFont: { family: "'Noto Sans JP', sans-serif", size: 13 },
-                        callbacks: {
-                            label: function(context) {
-                                return ' Proficiency: ' + context.raw + '%';
-                            }
-                        }
-                    }
-                }
-            }
-        });
 
         const manualData = [45, 30]; 
         const toolData = [1, 1];   
