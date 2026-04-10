@@ -92,13 +92,26 @@
 </head>
 <body class="antialiased">
 
+    <!-- Chosen Palette: Light Off-White background (#F0F0F0) to meet the light background requirement. Deep Navy (#0D1B2A) for primary text and structural contrast, Rich Gold (#C5A059) for highlights and calls to action. -->
+    
+    <!-- Application Structure Plan: Designed as a single-page interactive portfolio dashboard. The structure begins with an impactful Hero/Summary section (Profile) to immediately hook the recruiter. Then it flows into a new "Track Record" timeline displaying the massive list of servants to build immediate authority. It then transitions into a 3-column Skill Set card layout. The core "Case Studies" (Projects) use a tabbed interface to allow deep exploration without overwhelming vertical scroll, accurately reflecting the updated headings and integrated paragraphs. Finally, the "Technical Expertise" section uses interactive data visualization to quantify the business impact of tool development. -->
+    
+    <!-- Visualization & Content Choices: 
+    - Servant Track Record -> Goal: Organize/Impact -> Timeline Flex-wrap Layout (HTML/CSS) -> Hover interactions -> Visually proves overwhelming experience and volume of high-profile IP work.
+    - Skill Set -> Goal: Organize -> 3-Column CSS Grid -> Replaces old radar chart with clean text-focused cards for better readability.
+    - Project Showcase -> Goal: Organize -> Tabbed Panels (Vanilla JS) -> Click to switch projects -> Keeps layout compact while displaying rich qualitative data with updated, simpler headings.
+    - Tool Impact -> Goal: Compare -> Bar Chart (Chart.js) -> Interactive Toggle (Manual vs. Tool) -> Quantifies technical achievements. 
+    -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
     <nav class="fixed w-full bg-white/95 backdrop-blur shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <span class="font-serif text-xl font-bold text-navy-900 tracking-widest">OTOHA SHO</span>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">PROFILE</a>
-                    <a href="#record" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">TRACK RECORD</a>
+                    <a href="#record" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">RECORD</a>
                     <a href="#skills" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">SKILLS</a>
                     <a href="#projects" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">PROJECTS</a>
                     <a href="#tech" class="text-sm font-bold text-navy-800 hover:text-gold-500 transition">TECHNICAL</a>
@@ -115,9 +128,9 @@
                     <h1 class="text-4xl md:text-5xl font-serif font-bold text-navy-900 leading-tight">
                         音羽 翔 <span class="text-2xl text-gray-400 font-sans font-normal ml-2">OTOHA SHO</span>
                     </h1>
-                    <h2 class="text-xl text-navy-700 font-medium">F/GO Character Motion & Technical Solutions</h2>
+                    <h2 class="text-xl text-navy-700 font-medium">Character Motion & Technical Solutions</h2>
                     <p class="text-gray-700 leading-relaxed text-lg bg-light-100 p-6 rounded-lg border-l-4 border-navy-900">
-                        モーション表現の追求から、リグ構築、スクリプト開発によるワークフロー改善まで一貫して担うハイブリッドな制作スタイルが強みです。アーティストとしての表現力とエンジニアリングの技術力の両輪で、プロジェクトの課題を解決へと導きます。
+                        モーション表現の追求から、リグ構築、スクリプト開発によるワークフロー改善までを一貫して担う「ハイブリッドな制作スタイル」が強みです。アーティストとしての豊かな表現力と、エンジニアリングの確かな技術力の両輪で、プロジェクトが抱える課題を解決へと導きます。
                     </p>
                 </div>
                 <div class="w-full md:w-1/3 flex justify-center">
@@ -215,15 +228,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-8 md:p-12 rounded-2xl shadow-sm">
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                     <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Motion / Rigging (Maya)</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">繊細なデザイン意図を汲み取った高品質なモーション制作と、アニメーターが使いやすい堅牢なリグ構築。ディレクターから一発OKを引き出すクオリティコントロール。</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">デザインの意図を繊細に汲み取った高品質なモーション制作と、アニメーターが扱いやすい堅牢なリグ構築。ディレクターから一発で承認を獲得する、徹底したクオリティコントロールを実践しています。</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
-                    <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Scripting / AI Util</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Maya MELを用いた自動化ツールの開発。Gemini等のAIを積極的に活用し、未経験領域の言語仕様も迅速にキャッチアップして要件定義から最速で実装する能力。</p>
+                    <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Scripting / AI Utilization</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Maya MELを用いた自動化ツールの開発。Geminiなどの生成AIを積極的に活用し、未経験の言語や技術であっても迅速に習得（キャッチアップ）し、要件定義から実装までを最短で遂行する能力を備えています。</p>
                 </div>
                 <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                     <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2 mb-4"><span class="text-gold-500 text-2xl">&#9632;</span> Team Management</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">後進の育成、技術的サポート、メンタリング。困難なフィードバックに対する具体的な解決策の提示を通じたチーム全体の納品クオリティの担保。</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">後進の育成、技術的サポート、メンタリングの実施。難易度の高いフィードバックに対しても具体的な解決策を提示し、チーム全体の納品クオリティの担保とスキルの底上げに貢献します。</p>
                 </div>
             </div>
         </div>
@@ -253,8 +266,8 @@
                     </div>
                     
                     <div class="lg:col-span-3 p-8 md:p-12">
-                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">霊基3のリギング・モーション制作 / クオリティサポート</div>
-                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">水着両儀式 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2025年)</span></h3>
+                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">担当：リギング・モーション制作 / クオリティサポート</div>
+                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">1. 水着両儀式 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2025年)</span></h3>
                         
                         <div class="space-y-8">
                             <div>
@@ -267,7 +280,7 @@
                             <div>
                                 <h4 class="text-xl font-bold text-gold-600 border-b border-gray-200 pb-2 mb-3">後進育成</h4>
                                 <p class="text-gray-700 leading-relaxed">
-                                    他メンバーが担当した霊基1・2のリグおよびモーション制作において、技術的サポートとメンタリングを実施しました。特に難易度の高い霊基2の「着物のウェイト・制御」に関する高度なフィードバックに対し、<strong class="text-navy-900">的確な技術的解決策を自ら提示</strong>して直接サポートしました。個人の制作だけでなく、チームのボトムアップにも貢献しています。
+                                    他メンバーが担当した霊基1・2のリグおよびモーション制作において、技術的サポートとメンタリングを実施。特に難易度の高い霊基2の「着物のウェイト・制御」に関する高度なフィードバックに対し、<strong class="text-navy-900">的確な技術的解決策を自ら提示</strong>して直接サポートしました。個人としての制作完遂にとどまらず、チーム全体の品質向上にも貢献しています。
                                 </p>
                             </div>
                         </div>
@@ -287,20 +300,20 @@
                     </div>
                     
                     <div class="lg:col-span-3 p-8 md:p-12">
-                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">モーション</div>
-                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">壱与 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2022年)</span></h3>
+                        <div class="inline-block bg-navy-100 text-navy-900 text-xs font-bold px-3 py-1 rounded-full mb-4 bg-gray-100 border border-gray-200">担当：モーション制作</div>
+                        <h3 class="text-3xl font-serif font-bold text-navy-900 mb-6">2. 壱与 <span class="text-xl text-gray-500 font-sans font-normal ml-2">(FGO / 2022年)</span></h3>
                         
                         <div class="space-y-6">
                             <div>
                                 <h4 class="text-lg font-bold text-navy-900 mb-2">課題に対するアプローチと工夫</h4>
                                 <p class="text-gray-700 leading-relaxed bg-gray-50 p-4 rounded-lg">
-                                    アクロバットなモーションが多く要求されるキャラクターデザインに対し、破綻のない滑らかな動きを実現するアニメーション制作を担当しました。説得力のある回転表現や体重移動を再現するため、<strong class="text-navy-900 border-b border-gold-500">オリンピックの体操競技の動画を徹底的にリファレンスとして分析</strong>し、ダイナミックでありながらキャラクターの個性を損なわないモーションへと落とし込みました。
+                                    アクロバティックな動きが多く要求されるキャラクターデザインに対し、破綻のない滑らかな動作を実現しました。説得力のある回転表現や体重移動を再現するため、<strong class="text-navy-900 border-b border-gold-500">オリンピックの体操競技の動画を徹底的にリファレンスとして分析</strong>し、ダイナミックでありながらキャラクターの個性を損なわないモーションへと昇華させました。
                                 </p>
                             </div>
                             <div>
-                                <h4 class="text-lg font-bold text-navy-900 mb-2 flex items-center gap-2"><span class="text-gold-500">&#9733;</span> ユーザー反響</h4>
+                                <h4 class="text-lg font-bold text-navy-900 mb-2 flex items-center gap-2"><span class="text-gold-500">&#9733;</span> ユーザーの反響</h4>
                                 <p class="text-gray-700 leading-relaxed bg-gold-500/10 p-4 rounded-lg border border-gold-500/20">
-                                    イベント配布キャラクターとして多くのプレイヤーが実際に操作し目にする機会が多い中、実装後には<strong class="text-navy-900">プレイヤーからモーションに関する多数のポジティブなフィードバックを獲得</strong>。ユーザーのゲーム体験価値向上に直接貢献しました。
+                                    イベント配布キャラクターとして多くのプレイヤーが実際に操作する機会が多い中、実装後には<strong class="text-navy-900">モーションに関する多数のポジティブなフィードバックを獲得</strong>。ユーザーのゲーム体験価値向上に直接貢献しました。
                                 </p>
                             </div>
                         </div>
@@ -315,7 +328,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="mb-12 text-center">
                 <h2 class="text-3xl font-serif font-bold text-white">Technical Problem Solving & Tool Development</h2>
-                <p class="mt-4 text-gray-400">エンジニアリング視点によるワークフロー改善とツール開発</p>
+                <p class="mt-4 text-gray-400">エンジニアリング視点によるワークフロー改善</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -323,7 +336,7 @@
                     <!-- Tool 1: Scale Joint Fixer -->
                     <div class="bg-navy-800 p-8 rounded-2xl border border-navy-700 shadow-xl">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-gold-500">Unity用FBX ジョイントスケール自動修正</h3>
+                            <h3 class="text-xl font-bold text-gold-500">1. FBX ジョイントスケール自動修正ツール</h3>
                             <span class="text-xs bg-navy-700 px-3 py-1 rounded text-gray-300 font-mono border border-navy-600">Maya MEL / 2024年開発</span>
                         </div>
                         
@@ -333,16 +346,16 @@
 
                         <ul class="space-y-4 text-gray-300 text-sm">
                             <li><strong class="text-white block mb-1">Issue:</strong> Unity上で致命的なシステムエラーを引き起こす微小なジョイントスケール値に対し、Graph Editorでの目視確認と手作業による修正が常態化。多大な工数圧迫とヒューマンエラーのリスクが課題でした。</li>
-                            <li><strong class="text-white block mb-1">Solution:</strong> 全タイムライン・全ジョイントを対象とし、対象値以下を自動で0.001に補正するスクリプトを開発。</li>
-                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 毎度発生していた修正の手間を<span class="font-bold text-white">「1ボタン」</span>に短縮。（開発期間：約3ヶ月。未経験からライブラリを調査し実装）</li>
+                            <li><strong class="text-white block mb-1">Solution:</strong> 全タイムライン・全ジョイントを対象とし、しきい値以下のスケール値を自動で「0.001」に補正するスクリプトを開発。</li>
+                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 毎度発生していた手作業の修正工数を<span class="font-bold text-white">「ボタン1つ」</span>へと大幅に短縮。（開発期間：約3ヶ月。新規言語の仕様とライブラリをゼロから調査・習得し、実装を完遂）</li>
                         </ul>
                     </div>
 
                     <!-- Tool 2: Vertex Delete Tool -->
                     <div class="bg-navy-800 p-8 rounded-2xl border border-navy-700 shadow-xl">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold text-gold-500">不要Vertex自動削除ツール</h3>
-                            <span class="text-xs bg-navy-700 px-3 py-1 rounded text-gray-300 font-mono border border-navy-600">AI Util / 2026年開発</span>
+                            <h3 class="text-xl font-bold text-gold-500">2. 不要Vertex自動削除スクリプト</h3>
+                            <span class="text-xs bg-navy-700 px-3 py-1 rounded text-gray-300 font-mono border border-navy-600">AI Utilization / 2026年開発</span>
                         </div>
                         
                         <div class="w-full h-56 bg-navy-900 rounded-lg mb-6 overflow-hidden border border-gray-600 flex items-center justify-center p-2">
@@ -350,9 +363,9 @@
                         </div>
 
                         <ul class="space-y-4 text-gray-300 text-sm">
-                            <li><strong class="text-white block mb-1">Issue:</strong> マテリアル受け取り後のセットアップ時における、エッジ上の不要な頂点削除の手間。</li>
-                            <li><strong class="text-white block mb-1">Solution:</strong> 全ポリゴンを対象に、頂点両側のエッジ挟角から直線上の不要な頂点のみを判定し自動削除するツールを開発。</li>
-                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 最新技術(Gemini)を積極的に活用し、要件定義から<span class="font-bold text-white">わずか0.5日</span>で実装完了。</li>
+                            <li><strong class="text-white block mb-1">Issue:</strong> マテリアル受け取り後のセットアップ時において、エッジ上の不要な頂点を手動で削除する手間が課題でした。</li>
+                            <li><strong class="text-white block mb-1">Solution:</strong> 全ポリゴンを対象に、頂点両側のエッジ挟角から「直線上の不要な頂点のみ」を判定し、自動削除するツールを開発。</li>
+                            <li class="bg-navy-900 p-3 rounded border-l-4 border-gold-500"><strong class="text-gold-500 block mb-1">Outcome:</strong> 生成AI（Gemini）を積極的に活用することで、要件定義からわずか<span class="font-bold text-white">半日</span>で実装を完了。</li>
                         </ul>
                     </div>
                 </div>
@@ -382,7 +395,7 @@
             <h2 class="text-3xl font-serif font-bold text-gold-500 mb-8 tracking-widest uppercase">Vision</h2>
             <p class="text-xl text-white leading-loose font-serif mb-16 px-4">
                 「モーションの表現力」と、<br class="hidden md:block">
-                「リギング・スクリプト開発によるテクニカルな問題解決能力」<br>
+                「リギング・スクリプト開発によるテクニカルな問題解決能力」。<br>
                 この両輪で、チームの制作効率とアウトプットの質を<br class="hidden md:block">
                 最大化するアーティストを目指します。
             </p>
